@@ -1,0 +1,80 @@
+<div class="mm">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-7">
+        <div class="kk">
+          <div class="container" style="max-width: 500px">
+            <br /><br />
+            <h2>Login Page</h2>
+            <br />
+
+            <form #loginform="ngForm" (ngSubmit)="loginUser()">
+              <!-- {{loginform.form.valid}} -->
+
+              <small class="text-warning"> {{ msg }} </small>
+              <br />
+
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" placeholder="Enter email"
+             name="email"
+             [(ngModel)]="user.emailId" required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" #email="ngModel"
+                  [class.is-invalid]="email.invalid && email.touched" />
+                <!--  <small  class="text-danger" [class.d-none]="email.valid || email.untouched">Emailid is required field</small> -->
+                <div *ngIf="email.errors && email.invalid && email.touched">
+          <!-- <small class="text-danger" *ngIf="email.errors.required">Email id is invalid</small> -->
+
+                  <!-- <small class="text-danger" *ngIf="email.errors.pattern"
+                    >Enter the proper email in proper format</small
+                  > -->
+                </div>
+
+                <br />
+              </div>
+              <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control"  placeholder="Enter password"
+                  name="password"
+                  [(ngModel)]="user.password" required #password="ngModel"
+                  [class.is-invalid]="password.invalid && password.touched" />
+              <small
+                  class="text-danger"
+                  [class.d-none]="password.valid || password.untouched"
+                  >password is required field</small>
+               </div>
+              <br />
+              <div class="checkbox">
+                <label
+                  ><input type="checkbox" name="remember" /> Remember me</label
+                >
+              </div>
+              <br />
+              <button
+                [disabled]="loginform.form.invalid"
+                type="submit"
+                class="btn btn-info"> Login 
+              </button>
+              &nbsp; &nbsp;
+              <input type="reset" class="btn btn-info" value="Reset" />
+
+              &nbsp;&nbsp;<small [routerLink]="['/regs']" class="text-warning"
+                >New User? Click Here to Register</small
+              >
+              <br /><br />
+            </form>
+            <!-- <small class="float-right" (click)="gores()" >new user? Register here</small> -->
+          </div>
+          <br />
+          <h6>Please Enter Username and Password above Text Field</h6>
+          <h6>do not share username and password with any one</h6>
+          <br />
+          <small class="text-warning">
+            Submit Button will be enabled only when you entered valid
+            data</small
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

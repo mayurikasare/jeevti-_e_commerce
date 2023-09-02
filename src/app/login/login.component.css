@@ -1,0 +1,31 @@
+.mm{
+    background: linear-gradient(rgb(102, 180, 199),rgb(167, 59, 143),rgb(170, 68, 68));
+}
+form{
+    
+        border: 1px solid rgb(0, 0, 0);
+       /*  background-color: #649aa1; */
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      input{
+          border-radius: 2px solid black;
+          border-radius: 15px;
+      }
+      button
+      {
+        border-radius: 2px solid black;
+        border-radius: 15px;  
+      }
+    .kk{
+        text-align: center;
+    }
+    img{
+        width: 5.2in;
+        height: 7in;
+    }
+    h6{
+        color: maroon;
+    }
+   

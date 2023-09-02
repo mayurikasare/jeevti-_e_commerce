@@ -1,0 +1,123 @@
+<p>seller-add-product works!</p>
+<div class="container col-md-6">
+  <form #addProduct="ngForm" (ngSubmit)="addbooks(addProduct.value)"
+  class="common-form">
+    <h3>Add New product</h3>
+    <br />
+    <!-- <label><b>Product id : -</b></label>
+    <input
+      type="number"
+      name="id"
+       ngModel
+      placeholder="Product id*..."
+    /><br /><br /> -->
+    <label><b>Product Name : -</b></label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Product name*..."
+      [(ngModel)]="product.name"   /><br /><br />
+    <label><b>Product Price : -</b></label>
+    <input
+      type="number"
+      id="price"
+      name="price"
+      placeholder="Product price*..."
+      [(ngModel)]="product.price" 
+    /><br /><br />
+    <label><b>Product quantity : -</b> </label>
+    <input
+      type="number"
+      id="quantity"
+      name="quantity"
+      placeholder="Product quantity*..."
+      [(ngModel)]="product.quantity" 
+    /><br /><br />
+    <label><b>Product category : -</b> </label>
+    <input
+      type="text"
+      id="category"
+      name="category"
+      placeholder="Product category*..."
+      [(ngModel)]="product.category" 
+    /><br /><br />
+
+    <label><b>Product Image : -</b> </label>
+    <input
+      type="text"
+      id="url"
+      name="url"
+      placeholder="image url*..."
+      [(ngModel)]="product.url" 
+    /><br /><br />
+    <button class="btn btn-success">Add Product</button>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

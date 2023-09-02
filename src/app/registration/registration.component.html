@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+    <div class="container" style="max-width: 500px;" >
+<form #registration="ngForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+        <h2>Registration Page</h2>
+      <label for="name">Name: -</label>
+      <input type="text" id="userName" name="userName" ngModel required>
+      <div *ngIf="registration.controls['name'].invalid && registration.controls['name'].touched" class="error-message">
+        Name is required.
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="email">Email : -</label>
+      <input type="email" id="emailId" name="emailId" [(ngModel)]="user.emailId" required email>
+      <div *ngIf="['emailId.errors'] && ['emailId.invalid']&& ['emailId']touched">
+
+        <small class="text-danger" *ngIf="['email']errors['required']" >Email id is invalid</small>
+        
+        <small class="text-danger" *ngIf="['email']errorspattern">Enter the proper email in proper format</small>
+        </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="password">Password : -</label>
+      <input type="password" id="password" name="password" ngModel required minlength="6">
+      <div *ngIf="registration.controls['password'].invalid && registration.controls['password'].touched" class="error-message">
+        Password is required and must be at least 6 characters long.
+      </div>
+    </div>
+     <div class="center">
+    <button type="submit" [disabled]="registration.invalid">Register</button>
+   </div>
+  </form>
+</div>
+</div>
+</div>

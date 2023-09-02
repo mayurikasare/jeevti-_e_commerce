@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="row">
+    <div *ngIf="!showLogin" class="kk">
+      <div class="container" style="max-width: 500px">
+        <br /><br />
+        <h2>seller-Sigh-Up</h2>
+        <br />
+        <form #SellerSighUp="ngForm" (ngSubmit)="SighUp(SellerSighUp.value)">
+          <!-- {{loginform.form.valid}} -->
+          <div class="form-group">
+            <label for="name">Name :-</label>
+            <input
+              type="name"
+              class="form-control"
+              placeholder="Enter Name*"
+              name="userName"
+              [(ngModel)]="user.userName"
+              required
+            /><br />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Enter email*"
+              name="emailId"
+              [(ngModel)]="user.emailId"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+              #email="ngModel"
+              [class.is-invalid]="email.invalid && email.touched"
+            />
+            <div *ngIf="email.errors && email.invalid && email.touched"></div>
+            <br />
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Enter password*"
+              name="password"
+              [(ngModel)]="user.password"
+              required
+              #password="ngModel"
+              [class.is-invalid]="password.invalid && password.touched"
+            />
+            <small
+              class="text-danger"
+              [class.d-none]="password.valid || password.untouched"
+              >password is required field</small
+            >
+          </div>
+          <br />
+          <button type="submit" class="btn btn-info">SighUp</button>
+          &nbsp; &nbsp;
+          <input type="reset" class="btn btn-info" value="Reset" />
+          &nbsp; &nbsp;<br />
+          <a class="auth-toggle" (click)="OpenLogin()"
+            >Already Have Account? Click To Login</a
+          >
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- login area -->
+  <div *ngIf="showLogin" class="container" style="max-width: 500px">
+    <br /><br />
+    <h2>seller-Sigh-In</h2>
+    <br />
+    <p class="auth-error">{{ authError }}</p>
+    <form #Sellerlogin="ngForm" (ngSubmit)="sellerLogin(Sellerlogin.value)">
+      <!-- {{loginform.form.valid}} -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Enter email*"
+          name="email"
+          [(ngModel)]="user.emailId"
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          #email="ngModel"
+          [class.is-invalid]="email.invalid && email.touched"
+        />
+        <div *ngIf="email.errors && email.invalid && email.touched"></div>
+        <br />
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Enter password*"
+          name="password"
+          [(ngModel)]="user.password"
+          required
+          #password="ngModel"
+          [class.is-invalid]="password.invalid && password.touched"
+        />
+        <small
+          class="text-danger"
+          [class.d-none]="password.valid || password.untouched"
+          >password is required field</small
+        >
+      </div>
+      <br />
+
+      <button type="submit" class="btn btn-info">Login</button>
+      <!-- &nbsp; &nbsp;
+      <input type="reset" class="btn btn-info" value="Reset" /> -->
+      &nbsp; &nbsp;<br />
+      <a class="auth-toggle" (click)="OpenSighUp()"
+        >Don't Have Account? Click To SighUp</a
+      >
+    </form>
+  </div>
+</div>
