@@ -41,8 +41,7 @@ this.http.get(`http://localhost:3000/seller?email=${data.email}&password=${data.
   }
     else
       alert("unsuccesfully Login");
-    this.isLoginerror.emit(true)
-    
+    this.isLoginerror.emit(true)    
    })
  }
 }

@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent  implements OnInit{
 
   menuType:string='default';
+  
   sellerName:string='';
   constructor(private router:Router){}
 

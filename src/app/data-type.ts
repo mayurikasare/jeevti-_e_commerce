@@ -5,7 +5,17 @@ export interface SighUp{
 }
 //
 export interface login{
-    email:String,
-    password:String,
+    email:string,
+    password:string,
 
 }
+export interface product{
+
+    name:string;
+    price:number,
+    quantity:number,
+    category:string,
+    url:string,
+    id:number;
+}
+

@@ -1,7 +1,8 @@
-<p>seller-add-product works!</p>
+
 <div class="container col-md-6">
   <form #addProduct="ngForm" (ngSubmit)="addbooks(addProduct.value)"
-  class="common-form">
+  class="add-product">
+  <p class="p-meassage">{{addproductMeassage}}</p>
     <h3>Add New product</h3>
     <br />
     <!-- <label><b>Product id : -</b></label>
@@ -17,7 +18,7 @@
       id="name"
       name="name"
       placeholder="Product name*..."
-      [(ngModel)]="product.name"   /><br /><br />
+      ngModel  /><br /><br />
     <label><b>Product Price : -</b></label>
     <input
       type="number"
