@@ -1,1 +1,148 @@
-<p>seller-home works!</p>
+<div class="product-list">
+<table class="table table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">IMAGE</th>
+      <th scope="col">NAME</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">QUANTITY</th>
+      <th scope="col">CATEGORY</th>
+      <th scope="col">ACTION</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of productList">
+      <!--**error**    this product, is reference variable
+                                         of object and item is variable-->
+
+      <td><img src="{{ item.url}}" /></td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.category }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal">
+          Update
+        </button>
+      </td>
+      <td>
+        <button (click)="DeleteProduct(item.id)" 
+        class="btn btn-danger">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form #updateFrom="ngForm">
+            <fieldset>
+              <div class="form-group">
+                <label for="id"><span class="req">* </span> Product ID:</label>
+                <input
+                  required
+                  type="text"
+                  #id
+                  ngModel
+                  name="id"
+                  id="id"
+                  placeholder="Enter your Product ID..."
+                />
+              </div>
+              <div class="form-group">
+                <label for="name"
+                  ><span class="req">* </span> Product Name:</label
+                >
+                <input
+                  required
+                  type="text"
+                  #name
+                  ngModel
+                  name="name"
+                  id="name"
+                  placeholder="Enter your Product Name..."
+                />
+              </div>
+              <div class="form-group">
+                <label for="price"
+                  ><span class="req">* </span> Product price:</label
+                >
+                <input
+                  required
+                  type="text"
+                  #price
+                  ngModel
+                  name="price"
+                  id="price"
+                  placeholder="Enter your Product price..."
+                />
+              </div>
+              <div class="form-group">
+                <label for="color"
+                  ><span class="req">* </span> Product quantity:</label
+                >
+                <input
+                  required
+                  type="text"
+                  #quantity
+                  ngModel
+                  name="color"
+                  id="color"
+                  placeholder="Enter your Product Color..."
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="url"
+                  ><span class="req">* </span> Product url:</label
+                >
+                <input
+                  required
+                  type="text"
+                  #url
+                  ngModel
+                  name="url"
+                  id="url"
+                  placeholder="Enter your Product url..."
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  class="button"
+                  class="btn btn-success"
+                  type="submit"
+                  value="Update"
+                  [routerLink]="['/displaybook']"
+                />
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</table>
+</div>

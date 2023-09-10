@@ -1,0 +1,11 @@
+img{
+    width: 200px;
+    height: 200px;
+}
+input{
+    margin: 11px;
+    padding: 7px;
+}
+.button{
+    align-items: center;
+}

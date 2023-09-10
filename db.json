@@ -1,34 +1,19 @@
 {
   "seller": [
     {
-      "name": "mayuri kasare",
-      "email": "mayurikasare@gmail.com",
-      "password": "mayuri123",
-      "id": 2
-    },
-    {
-      "name": "pari",
-      "email": "pari@gmail.com",
-      "password": "pari123",
-      "id": 3
-    },
-    {
       "userName": "mayuri kasare",
       "emailId": "mayurikasare@gmail.com",
       "password": "mayuri123",
-      "id": 4
-    },
-    {
-      "userName": "mayuri kasare",
-      "emailId": "mayurikasare@gmail.com",
-      "password": "mayuri123",
-      "id": 5
-    },
-    {
-      "userName": "mayuri kasare",
-      "emailId": "mayurikasare@gmail.com",
-      "password": "mayuri123",
-      "id": 6
+      "id": 1
     }
+  ],
+  "products": [
+  {
+    "name":"iphone",
+    "price":100000,
+    "quantity":1,
+    "category":"mobile",
+    "url":"https://th.bing.com/th/id/OIP.thanxWr7pgMNxd9qTRanEAHaKI?pid=ImgDet&rs=1"
+  }
   ]
 }
